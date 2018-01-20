@@ -23,6 +23,11 @@ const config = Object.assign(
       watchOptions: {
         ignored: /node_modules/,
       },
+      proxy: {
+        "/api": {
+          target: "http://localhost:5000",
+        },
+      },
     },
   })
 
