@@ -1,2 +1,7 @@
 /.bundle/
 /vendor/
+/node_modules/
+/*.log
+
+.env
+/public/

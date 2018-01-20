@@ -1,0 +1,18 @@
+default: &default
+  publicPath: '/'
+  title: 'BookChest'
+
+development:
+  <<: *default
+  publicPath: '//test:8080/'
+
+  dev_server:
+    host: 0.0.0.0
+    port: 8080
+    https: false
+
+test:
+  <<: *default
+
+production:
+  <<: *default

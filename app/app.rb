@@ -1,7 +1,16 @@
 require 'sinatra/base'
+require 'sinatra/reloader'
+require 'sinatra/namespace'
 
 class BookChest < Sinatra::Base
-  get '/hello' do
-    'Hello World!'
+  configure :development do
+    register Sinatra::Reloader
+  end
+  register Sinatra::Namespace
+
+  namespace '/api/v1' do
+    get '/hello' do
+      'Hello World!'
+    end
   end
 end
