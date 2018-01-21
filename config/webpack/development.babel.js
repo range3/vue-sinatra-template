@@ -24,12 +24,13 @@ const config = Object.assign(
         ignored: /node_modules/,
       },
       proxy: {
-        "/api": {
-          target: "http://localhost:5000",
+        '/api': {
+          target: 'http://localhost:5000',
         },
       },
     },
-  })
+  },
+)
 
 config.plugins.push(...[
   new webpack.HotModuleReplacementPlugin(),

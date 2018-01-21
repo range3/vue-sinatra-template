@@ -56,7 +56,7 @@ export default {
           use: [
             { loader: 'css-loader', options: { minimize: isProd, sourceMap: false } },
             { loader: 'postcss-loader', options: { sourceMap: false } },
-            { loader: 'resolve-url-loader', options: { sourceMap: false }},
+            { loader: 'resolve-url-loader', options: { sourceMap: false } },
             { loader: 'sass-loader', options: { sourceMap: false } },
           ],
         }),
@@ -67,7 +67,7 @@ export default {
           loader: 'url-loader',
           options: {
             limit: 10000,
-            name: 'assets/images/[name]-[hash:7].[ext]'
+            name: 'assets/images/[name]-[hash:7].[ext]',
           },
         }],
       },
@@ -77,7 +77,7 @@ export default {
           loader: 'url-loader',
           options: {
             limit: 10000,
-            name: 'assets/fonts/[name]-[hash:7].[ext]'
+            name: 'assets/fonts/[name]-[hash:7].[ext]',
           },
         }],
       },
@@ -85,8 +85,7 @@ export default {
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)}),
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV) }),
     new ExtractTextPlugin({
       filename: 'assets/css/[name].css',
       disable: !isProd,
@@ -101,7 +100,7 @@ export default {
   ],
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      vue$: 'vue/dist/vue.esm.js',
     },
   },
 }

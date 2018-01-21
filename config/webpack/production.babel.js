@@ -4,7 +4,8 @@ import sharedConfig from './shared'
 const config = Object.assign(
   {},
   sharedConfig,
-  {})
+  {},
+)
 
 config.plugins.push(...[
   new webpack.optimize.UglifyJsPlugin({
