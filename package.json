@@ -1,37 +1,41 @@
 {
   "name": "bookchest",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "client/main.js",
   "author": "range3",
   "license": "MIT",
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
+    "last 2 Chrome versions"
   ],
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --color --config config/webpack/development.babel.js",
+    "dev": "NODE_ENV=development webpack-dev-server --color --config config/webpack/development.babel.js",
     "build:production": "rimraf public && NODE_ENV=production webpack --config config/webpack/production.babel.js",
     "build:development": "rimraf public && NODE_ENV=development webpack --config config/webpack/development.babel.js",
     "lint": "eslint --ext js,vue --ignore-path .gitignore .",
     "heroku-postbuild": "yarn build:production"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
     "vue": "^2.5.13",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.9",
     "eslint": "^4.15.0",
-    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-compat": "^2.1.0",
     "eslint-plugin-html": "^4.0.1",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",
@@ -47,98 +51,5 @@
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.0"
-  },
-  "babel": {
-    "env": {
-      "development": {
-        "presets": [
-          [
-            "env",
-            {
-              "targets": {
-                "browsers": [
-                  "last 2 Chrome versions"
-                ]
-              }
-            }
-          ]
-        ]
-      },
-      "test": {
-        "presets": [
-          [
-            "env",
-            {
-              "targets": {
-                "browsers": [
-                  "last 2 versions"
-                ]
-              }
-            }
-          ]
-        ]
-      },
-      "production": {
-        "presets": [
-          [
-            "env",
-            {
-              "targets": {
-                "browsers": [
-                  "last 2 versions"
-                ]
-              }
-            }
-          ]
-        ]
-      }
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "eslintConfig": {
-    "extends": [
-      "airbnb-base"
-    ],
-    "plugins": [
-      "compat",
-      "html"
-    ],
-    "env": {
-      "browser": true,
-      "jest": true
-    },
-    "rules": {
-      "semi": [
-        2,
-        "never"
-      ],
-      "no-unexpected-multiline": 2,
-      "no-continue": 0,
-      "brace-style": [
-        2,
-        "stroustrup"
-      ],
-      "no-underscore-dangle": [
-        2,
-        {
-          "allowAfterThis": true
-        }
-      ],
-      "compat/compat": 2,
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": [
-            "**/webpack.config.js",
-            "**/webpack.config.*.js",
-            "config/webpack/**"
-          ]
-        }
-      ]
-    }
   }
 }

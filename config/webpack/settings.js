@@ -9,5 +9,4 @@ export const isProd =
   process.env.NODE_ENV === 'production'
 
 export const settings =
-  yaml.safeLoad(fs.readFileSync(configPath, 'utf8'))[
-    process.env.NODE_ENV]
+  yaml.safeLoad(fs.readFileSync(configPath, 'utf8'))[process.env.NODE_ENV]

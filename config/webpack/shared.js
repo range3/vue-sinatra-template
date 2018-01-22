@@ -7,7 +7,7 @@ import { isProd, settings } from './settings'
 export default {
   entry: {
     main: [
-      './client/index.js',
+      './client/main.js',
     ],
   },
   output: {
@@ -99,8 +99,10 @@ export default {
     }),
   ],
   resolve: {
+    extensions: ['.js', '.vue', '.json'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, '../../client'),
     },
   },
 }

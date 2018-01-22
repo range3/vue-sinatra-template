@@ -1,0 +1,54 @@
+{
+  "extends": [
+    "standard"
+  ],
+  "plugins": [
+    "compat",
+    "html"
+  ],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "semi": [
+      "error",
+      "never"
+    ],
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "no-unexpected-multiline": "error",
+    "no-continue": "off",
+    "brace-style": [
+      "error",
+      "stroustrup"
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allowAfterThis": true
+      }
+    ],
+    "compat/compat": "error",
+    // eslint-import-resolver-webpack doesn't work well :(
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": [
+      "error", {
+        "devDependencies": [
+          "**/webpack.config.js",
+          "**/webpack.config.*.js",
+          "config/webpack/**"
+        ]
+      }
+    ],
+    "no-param-reassign": [
+      "error", {
+        "props": true,
+        "ignorePropertyModificationsFor": [
+          "state"
+        ]
+      }
+    ]
+  }
+}
