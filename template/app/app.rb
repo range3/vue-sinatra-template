@@ -4,7 +4,7 @@ require 'sinatra/namespace'
 
 require_relative'controllers/static_controller'
 
-class BookChest < Sinatra::Base
+class App < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
     enable :logging
@@ -21,7 +21,6 @@ class BookChest < Sinatra::Base
 
   namespace '/api/v1' do
     get '/hello' do
-      puts settings.root
       'Hello World!'
     end
   end

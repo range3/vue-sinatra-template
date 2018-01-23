@@ -1,9 +1,11 @@
 {
-  "name": "bookchest",
+  "name": "{{ name }}",
+  "description": "{{ description }}",
   "version": "0.1.0",
   "main": "client/main.js",
-  "author": "range3",
-  "license": "MIT",
+  "author": "{{ author }}",
+  "license": "{{ license }}",
+  "private": true,
   "browserslist": [
     "last 2 Chrome versions"
   ],

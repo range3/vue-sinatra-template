@@ -1,5 +1,7 @@
-BookChest
+{{ name }}
 ----
+> {{ description }}
+
 
 ## Development
 ### start dev server
